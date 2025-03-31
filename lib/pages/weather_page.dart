@@ -41,7 +41,7 @@ class _WeatherPageState extends State<WeatherPage> {
       case 'mist':
       case 'smoke':
       case 'haze':
-      case 'dust':  
+      case 'dust':
       case 'fog':
         return 'assets/cloudy.json';
       case 'rain':
@@ -56,6 +56,7 @@ class _WeatherPageState extends State<WeatherPage> {
         return 'assets/sunny.json';
     }
   }
+
   //init state
   @override
   void initState() {
@@ -72,18 +73,18 @@ class _WeatherPageState extends State<WeatherPage> {
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+            children: [
               // City name with larger font and bold style
               Text(
                 _weather?.cityName ?? 'Loading city...',
                 style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                color: Colors.blueAccent,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blueAccent,
                 ),
               ),
               SizedBox(height: 20),
-        
+
               // Weather animation
               Lottie.asset(
                 getWeatherAnimation(_weather?.mainCondition),
@@ -91,30 +92,30 @@ class _WeatherPageState extends State<WeatherPage> {
                 height: 200,
               ),
               SizedBox(height: 20),
-        
+
               // Temperature with larger font and bold style
               Text(
                 _weather != null
-                  ? '${_weather!.temperature.round()}°C'
-                  : 'Loading temperature...',
+                    ? '${_weather!.temperature.round()}°C'
+                    : 'Loading temperature...',
                 style: TextStyle(
-                fontSize: 32,
-                fontWeight: FontWeight.bold,
-                color: Colors.orangeAccent,
+                  fontSize: 32,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.orangeAccent,
                 ),
               ),
               SizedBox(height: 10),
-        
+
               // Weather condition with italic style
               Text(
                 _weather?.mainCondition ?? 'Loading condition...',
                 style: TextStyle(
-                fontSize: 18,
-                fontStyle: FontStyle.italic,
-                color: Colors.white,
+                  fontSize: 18,
+                  fontStyle: FontStyle.italic,
+                  color: Colors.white,
                 ),
               ),
-              ],
+            ],
           ),
         ),
       ),
